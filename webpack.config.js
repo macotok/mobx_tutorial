@@ -15,10 +15,7 @@ module.exports = (_env, argv) => {
         {
           test: /\.jsx?$/,
           exclude: [/node_modules/],
-          loader: 'babel-loader',
-          query: {
-            presets: ['@babel/preset-env'],
-          },
+          use: ['babel-loader'],
         },
       ],
     },
@@ -30,6 +27,7 @@ module.exports = (_env, argv) => {
       watchContentBase: true,
       host: '0.0.0.0',
       port: 9876,
+      open: true,
     },
   };
 };
